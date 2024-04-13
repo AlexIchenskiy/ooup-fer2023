@@ -1,0 +1,3 @@
+# Razlika između OOP i ne-OOP stilova
+
+U datoteci `betterGeometry.cpp` se nalazi implementacija primjera s predavanja koja, za razliku od primjera u zadatku, koristi klase i objektno orijentiran stil programiranja koji uključuje korištenje klasa i metoda. Samim time, smanjuje se krhkost koda jer dodavanjem bilo koje nove vrste klase `Shape` možemo njezine metode direktno koristiti bez nadograđivanja i provjere tipova. Osim toga, smanjuje se i krhkost jer je program podložan dodavanju novih funkcionalnosti bez da se neki dio koda 'skrši'.

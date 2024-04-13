@@ -1,0 +1,8 @@
+.idea
+.settings
+.metadata
+target
+__pycache__
+.classpath
+.project
+*.zip

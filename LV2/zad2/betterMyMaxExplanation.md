@@ -1,0 +1,3 @@
+# Razlika između OOP i funkcionalne implementacije funkcije za pronalaženje največeg broja
+
+Iako se po pitanju fleksibilnosti ova rješenja ne razlikuju previše jer pružaju istu funkcionalnost, samo na različite načine, OOP rješenje omogućava jednostavniji i abstraktniji pristup problemu bez potrebe koristiti previše pointera i veličine varijabli. Naime, to možemo smatrati i nedostatkom jer nemamo direktniji uvid u memoriju i stanje programa.
