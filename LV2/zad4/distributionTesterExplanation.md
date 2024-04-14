@@ -1,0 +1,3 @@
+# Pojašnjenje DistributionTester implementacije
+
+U zadatku se koristi oblikovni obrazac `Strategija` kako bi se omogućilo fleksibilno korištenje klase `DistributionTester` sa različitim vrstama generatora slijeda brojeva i testera percentila. Svaki generator i tester je opisan odgovarajućim sučeljem te se kod korištenja to sučelje zada kao tip što omogućava prosljeđivanje bilo kojeg željenog generatora ili testera.

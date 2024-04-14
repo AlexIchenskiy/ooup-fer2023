@@ -1,0 +1,3 @@
+# Pojašnjenje implementacije SlijedBrojeva
+
+U ovom sam zadatku odlučio koristiti oblikovni obrazac `Strategija`, kao i u prethodnom zadatku, kako bih omogučio fleksibilno korištenje više različitih izvora podataka i akcija te oblikovni obrazac `Promatrač` za ostvarivanje funkcionalnosti akcija koje se dodaju u popis listener-a slijeda brojeva te se zatim prikladno obavještavaju kada to bude potrebno što rezultira izvršavanjem odgovarajućih naredbi.

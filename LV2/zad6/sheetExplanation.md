@@ -1,0 +1,3 @@
+# Pojašnjenje implementacije tabličnog kalkulatora
+
+Tablični kalkulator je ostvaren pomoću oblikovnog obrasca `Promatrač` na način da je svaka ćelija i promatrač, i slušatelj. U slučaju da se vrijednost neke ćelije promijeni na vrijednost koja sadrži druge ćelije, doda sebe u listu slušatelja tih ćelija da se ažuriranjem bilo koje od tih ćelija pozove obavještavanje svih povezanih ćelija. To se dešava lančano i na bilo kojoj dubini. Sprečavanje kružnih ovisnosti omogućeno je na način da provjeravamo nalazi se u listi slušatelja neke ćelije ćelija na koju se pokušava 'pretplatiti' ili ta ista ćelija te bacamo odgovarajuću iznimku. Na taj se način omogućava sigurno korištenje tabličnog kalkulatora što je i demonstrirano u aplikaciji.
