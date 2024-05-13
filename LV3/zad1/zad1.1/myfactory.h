@@ -1,1 +1,3 @@
-void *myfactory(char const *libname, char const *ctorarg);
+#include <stdbool.h>
+
+void *myfactory(char const *libname, char const *ctorarg, bool onStack);

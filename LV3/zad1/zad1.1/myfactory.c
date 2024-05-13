@@ -4,10 +4,11 @@
 #include <stdlib.h>
 #include <dlfcn.h>
 #include <string.h>
+#include <stdbool.h>
 
 typedef void *(*PTRFUN)(char const *);
 
-void *myfactory(char const *libname, char const *ctorarg)
+void *myfactory(char const *libname, char const *ctorarg, bool onStack)
 {
     char *full_libname = (char *)malloc(strlen(libname) + 5);
     if (!full_libname)
@@ -19,7 +20,8 @@ void *myfactory(char const *libname, char const *ctorarg)
     strcat(full_libname, ".so");
 
     void *handle = dlopen(full_libname, RTLD_LAZY);
-    PTRFUN pfun = (PTRFUN)dlsym(handle, "create");
+    PTRFUN pfun = (PTRFUN)dlsym(handle, onStack ? "construct" : "create");
+
     if (!pfun)
     {
         return NULL;

@@ -30,9 +30,11 @@ void animalPrintMenu(struct Animal *animal)
 
 int main(int argc, char *argv[])
 {
+    bool onStack = true;
+
     for (int i = 0; i < argc / 2; ++i)
     {
-        struct Animal *p = (struct Animal *)myfactory(argv[1 + 2 * i], argv[1 + 2 * i + 1]);
+        struct Animal *p = (struct Animal *)myfactory(argv[1 + 2 * i], argv[1 + 2 * i + 1], onStack);
         if (!p)
         {
             printf("Creation of plug-in object %s failed.\n", argv[1 + 2 * i]);
@@ -41,6 +43,7 @@ int main(int argc, char *argv[])
 
         animalPrintGreeting(p);
         animalPrintMenu(p);
-        free(p);
+        if (!onStack)
+            free(p);
     }
 }

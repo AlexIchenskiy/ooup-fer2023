@@ -33,8 +33,15 @@ void *create(char const *name)
     return t;
 }
 
-void construct(Tiger *t, char const *name)
+void *construct(char const *name)
 {
+    Tiger *t = (Tiger *)alloca(sizeof(Tiger));
     t->name = name;
     t->vtable = tigerVtable;
+    return t;
+}
+
+size_t sizeOf()
+{
+    return sizeof(Tiger);
 }

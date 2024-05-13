@@ -33,8 +33,15 @@ void *create(char const *name)
     return p;
 }
 
-void construct(Parrot *p, char const *name)
+void *construct(char const *name)
 {
+    Parrot *p = (Parrot *)alloca(sizeof(Parrot));
     p->name = name;
     p->vtable = parrotVtable;
+    return p;
+}
+
+size_t sizeOf(Parrot p)
+{
+    return sizeof(Parrot);
 }
