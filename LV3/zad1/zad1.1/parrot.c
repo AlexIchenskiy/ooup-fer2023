@@ -32,3 +32,9 @@ void *create(char const *name)
     p->vtable = parrotVtable;
     return p;
 }
+
+void construct(Parrot *p, char const *name)
+{
+    p->name = name;
+    p->vtable = parrotVtable;
+}

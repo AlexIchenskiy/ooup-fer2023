@@ -32,3 +32,9 @@ void *create(char const *name)
     t->vtable = tigerVtable;
     return t;
 }
+
+void construct(Tiger *t, char const *name)
+{
+    t->name = name;
+    t->vtable = tigerVtable;
+}
