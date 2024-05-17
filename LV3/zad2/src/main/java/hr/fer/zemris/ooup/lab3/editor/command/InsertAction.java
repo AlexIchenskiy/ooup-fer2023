@@ -23,7 +23,7 @@ public class InsertAction implements EditAction {
         this.prevCursorLocation = this.model.getCursorLocation();
         this.prevSelectionRange = this.model.getSelectionRange();
         this.c = c;
-        this.prevLines = new ArrayList<>(this.model.getLines());
+        this.prevLines = this.model.getLines();
     }
 
     public InsertAction(TextEditorModel model, String text) {

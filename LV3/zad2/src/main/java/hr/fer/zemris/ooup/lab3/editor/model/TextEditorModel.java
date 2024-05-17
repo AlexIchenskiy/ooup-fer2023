@@ -7,6 +7,7 @@ import hr.fer.zemris.ooup.lab3.editor.observer.TextObserver;
 import hr.fer.zemris.ooup.lab3.editor.singleton.UndoManager;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class TextEditorModel {
 
@@ -78,11 +79,11 @@ public class TextEditorModel {
     }
 
     public List<String> getLines() {
-        return List.copyOf(this.lines);
+        return new ArrayList<>(this.lines);
     }
 
     public void setLines(List<String> lines) {
-        this.lines = lines;
+        this.lines = new ArrayList<>(lines);
         this.notifyTextListeners();
     }
 
@@ -91,7 +92,7 @@ public class TextEditorModel {
     }
 
     public void setSelectionRange(LocationRange selectionRange) {
-        this.selectionRange = selectionRange;
+        this.selectionRange = new LocationRange(selectionRange);
         this.notifyTextListeners();
     }
 
@@ -100,7 +101,7 @@ public class TextEditorModel {
     }
 
     public void setCursorLocation(Location cursorLocation) {
-        this.cursorLocation = cursorLocation;
+        this.cursorLocation = new Location(cursorLocation);
         this.notifyCursorListeners(cursorLocation);
     }
 
