@@ -24,9 +24,9 @@ public class TextEditorToolbar extends JToolBar {
         JMenuBar menuBar = new JMenuBar();
 
         JMenu fileMenu = new JMenu("File");
-        fileMenu.add(new OpenAction());
-        fileMenu.add(new SaveAction());
-        fileMenu.add(new ExitAction());
+        fileMenu.add(new OpenAction(this.editor));
+        fileMenu.add(new SaveAction(this.editor));
+        fileMenu.add(new ExitAction(this.editor));
 
         JMenu editMenu = new JMenu("Edit");
         editMenu.add(new UndoAction(this.editor.getModel()));
