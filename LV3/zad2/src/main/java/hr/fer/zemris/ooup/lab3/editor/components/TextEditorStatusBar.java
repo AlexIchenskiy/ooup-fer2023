@@ -12,27 +12,27 @@ public class TextEditorStatusBar extends JToolBar implements CursorObserver, Tex
 
     private final TextEditorModel model;
 
-    private final JLabel lineLabel = new JLabel("Line: 0");
+    private final JLabel lineLabel = new JLabel("Line: 1");
 
-    private final JLabel columnLabel = new JLabel("Column: 0");
+    private final JLabel columnLabel = new JLabel("Column: 1");
 
-    private final JLabel linesLabel = new JLabel("Lines: 0");
+    private final JLabel linesLabel = new JLabel("Lines: 1");
 
     public TextEditorStatusBar(TextEditorModel model) {
         this.model = model;
         this.model.addTextListener(this);
         this.model.addCursorListener(this);
         this.linesLabel.setText("Lines: " + this.model.getLines().size());
-        this.lineLabel.setText("Line: " + this.model.getCursorLocation().getLine());
-        this.columnLabel.setText("Column: " + this.model.getCursorLocation().getColumn());
+        this.lineLabel.setText("Line: " + (this.model.getCursorLocation().getLine() + 1));
+        this.columnLabel.setText("Column: " + (this.model.getCursorLocation().getColumn() + 1));
 
         this.initGUI();
     }
 
     @Override
     public void updateCursorLocation(Location loc) {
-        this.lineLabel.setText("Line: " + loc.getLine());
-        this.columnLabel.setText("Column: " + loc.getColumn());
+        this.lineLabel.setText("Line: " + (loc.getLine() + 1));
+        this.columnLabel.setText("Column: " + (loc.getColumn() + 1));
     }
 
     @Override
