@@ -65,6 +65,7 @@ public class SelectShapeState extends IdleState {
 
             model.addGraphicalObject(composite);
             composite.setSelected(true);
+            this.selected = composite;
         } else if (keyCode == 85) { // U
             List<GraphicalObject> objects = new ArrayList<>(this.model.getSelectedObjects());
 

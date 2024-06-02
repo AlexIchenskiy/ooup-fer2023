@@ -50,6 +50,13 @@ public class CompositeShape extends AbstractGraphicalObject {
     }
 
     @Override
+    public void translate(Point delta) {
+        for (GraphicalObject go : this.objects) go.translate(delta);
+
+        this.notifyListeners();
+    }
+
+    @Override
     public void render(Renderer r) {
         for (GraphicalObject go : this.objects) go.render(r);
     }
